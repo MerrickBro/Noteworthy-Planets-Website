@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0" version="29.6.1">
   <diagram name="Page-1" id="megybSgjKoJs7KxyL1Jr">
-    <mxGraphModel dx="2127" dy="1363" grid="1" gridSize="15" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10" pageHeight="10" background="light-dark(#B0E0FF, #171650)" math="0" shadow="0">
+    <mxGraphModel dx="1988" dy="1283" grid="1" gridSize="15" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10" pageHeight="10" background="light-dark(#B0E0FF, #171650)" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -77,7 +77,7 @@
           <mxGeometry height="170" width="535" x="1355" y="75" as="geometry" />
         </mxCell>
         <mxCell id="RWbqTTCPORRWfMMUtOY9-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;Popups&lt;/font&gt;" vertex="1">
-          <mxGeometry height="60" width="605" x="1935" y="-515" as="geometry" />
+          <mxGeometry height="60" width="600" x="1935" y="-515" as="geometry" />
         </mxCell>
         <mxCell id="RWbqTTCPORRWfMMUtOY9-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Image Input Guide&lt;/font&gt;" vertex="1">
           <mxGeometry height="40" width="395" x="2040" y="-445" as="geometry" />
@@ -88,7 +88,7 @@
         <mxCell id="RWbqTTCPORRWfMMUtOY9-4" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="P-1" vertex="1">
           <mxGeometry height="15" width="35" x="2005" y="-450" as="geometry" />
         </mxCell>
-        <mxCell id="RWbqTTCPORRWfMMUtOY9-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="1. -----&lt;div&gt;2. -----&lt;/div&gt;&lt;div&gt;3. -----&lt;/div&gt;&lt;div&gt;4. -----&lt;/div&gt;" vertex="1">
+        <mxCell id="RWbqTTCPORRWfMMUtOY9-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;1. Take screenshot in-game&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;2. Post the screenshot to Imgur&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;3. Right click image to &quot;Copy image address&quot;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;4. Paste address into the image input box&lt;/font&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="110" width="215" x="2130" y="-395" as="geometry" />
         </mxCell>
         <mxCell id="RWbqTTCPORRWfMMUtOY9-8" edge="1" parent="1" source="RWbqTTCPORRWfMMUtOY9-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="migMtLXEQ_5tDXaq1aaH-1">
