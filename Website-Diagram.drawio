@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 OPR/130.0.0.0" version="29.6.1">
   <diagram name="Page-1" id="megybSgjKoJs7KxyL1Jr">
-    <mxGraphModel dx="3746" dy="2300" grid="1" gridSize="15" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10" pageHeight="10" background="light-dark(#B0E0FF, #171650)" math="0" shadow="0">
+    <mxGraphModel dx="2127" dy="1363" grid="1" gridSize="15" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="10" pageHeight="10" background="light-dark(#B0E0FF, #171650)" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -133,7 +133,7 @@
         <mxCell id="RWbqTTCPORRWfMMUtOY9-30" edge="1" parent="1" source="RWbqTTCPORRWfMMUtOY9-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="RWbqTTCPORRWfMMUtOY9-26">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="RWbqTTCPORRWfMMUtOY9-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="The list will be scrollable, and sorted by amount posted.&lt;div&gt;Example:&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;1. Player1&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;18&lt;/span&gt;&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;2. Player2&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1&lt;/i&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="RWbqTTCPORRWfMMUtOY9-29" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;The list will be scrollable, and sorted by amount posted.&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Example:&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;1. Player1&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;18&lt;/span&gt;&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;&lt;div style=&quot;text-align: left;&quot;&gt;&lt;i&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;2. Player2&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;&lt;/span&gt;1&lt;/font&gt;&lt;/i&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="100" width="120" x="1935" y="-95" as="geometry" />
         </mxCell>
         <mxCell id="RWbqTTCPORRWfMMUtOY9-33" edge="1" parent="1" source="RWbqTTCPORRWfMMUtOY9-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="migMtLXEQ_5tDXaq1aaH-18">
@@ -141,6 +141,16 @@
         </mxCell>
         <mxCell id="RWbqTTCPORRWfMMUtOY9-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="S-3" vertex="1">
           <mxGeometry height="15" width="35" x="-670" y="1865" as="geometry" />
+        </mxCell>
+        <mxCell id="RWbqTTCPORRWfMMUtOY9-36" edge="1" parent="1" source="RWbqTTCPORRWfMMUtOY9-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="RWbqTTCPORRWfMMUtOY9-24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2448" y="-170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RWbqTTCPORRWfMMUtOY9-35" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Recommended autofill, not caps sensitive unless created for the first time.&lt;/font&gt;" vertex="1">
+          <mxGeometry height="44" width="120" x="2417.5" y="-230" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
