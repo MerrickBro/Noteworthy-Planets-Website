@@ -1,0 +1,18 @@
+/* font-family: NMSFuturaProBook */
+@import url('https://font.nmscd.com/assets/font/NMSFuturaProBook_Kerned/Web-TT/NMSFuturaProBook_Kerned.css');
+/* font-family: NMSGeoSans */
+@import url('https://font.nmscd.com/assets/font/NMSGeoSans_Kerned/Web-TT/NMSGeoSans_Kerned.css');
+
+html {
+    background-color: black;
+    font-family: 'NMSGeoSans', sans-serif;
+    color: white;
+}
+
+.screen {
+    display: none;
+}
+
+.active {
+    display: flex;
+}
