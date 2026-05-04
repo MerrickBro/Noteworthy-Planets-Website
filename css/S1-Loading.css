@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 70%;
     height: 100%;
 }
 
@@ -37,7 +37,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding-top: 10%;
+}
+
+#S1-LoadingText, #S1-ImageHolder {
+    margin: 5%;
 }
 
 .loadingGlyph {

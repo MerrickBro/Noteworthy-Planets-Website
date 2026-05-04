@@ -14,10 +14,10 @@
     align-self: center;
     border: 4px solid #000000;
     border-radius: 1svb;
-    left: 0%;
     height: 95%;
     width: 25%;
     margin: 0.5%;
+    align-items: center;
 }
 
 #S2-Top {
@@ -53,6 +53,7 @@
     display: flex;
     justify-content: space-between;
     height: fit-content;
+    align-items: center;
 }
 
 #S2-Author {
@@ -62,10 +63,35 @@
 
 #S2-InfoButton {
     aspect-ratio: 1 / 1;
-    height: 100%;
+    height: 50px;
 }
 
 #S2-Bottom {
-    height: 30%;
+    height: 20%;
     width: 100%;
+}
+
+#S2-ButtonRow1, #S2-ButtonRow2, #S2-ButtonRow3 {
+    display: flex;
+    justify-content: space-between;
+    height: 33%;
+    align-items: center;
+}   
+
+.WideButton {
+    width: 100%;
+}
+
+#S2-GlyphButton, #S2-GlyphButton img {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    background-color: #00000000;
+    border: 0px;
+}
+
+#S2-InfoButton, #S2-InfoButton img {
+    aspect-ratio: 106 / 179;
+    height: 100%;
+    background-color: #00000000;
+    border: 0px;
 }
