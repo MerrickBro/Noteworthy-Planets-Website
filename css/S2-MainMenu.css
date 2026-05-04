@@ -4,3 +4,68 @@
     height: 100%;
     width: 100%;
 }
+
+#S2-Main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #00000077;
+    backdrop-filter: blur(5px);
+    align-self: center;
+    border: 4px solid #000000;
+    border-radius: 1svb;
+    left: 0%;
+    height: 95%;
+    width: 25%;
+    margin: 0.5%;
+}
+
+#S2-Top {
+    height: 40%;
+    width: 100%;
+    top: 0%;
+    margin: 2%;
+}
+
+#S2-TitleFrame {
+    height: fit-content;
+}
+
+#S2-Title {
+    font-size: 50px;
+    text-align: center;
+    margin: 0%;
+}
+
+#S2-LogoFrame {
+    height: 70%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#S2-AppLogo {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+#S2-AuthorAndInfo {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+}
+
+#S2-Author {
+    font-size: 20px;
+    margin: 0%;
+}
+
+#S2-InfoButton {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+}
+
+#S2-Bottom {
+    height: 30%;
+    width: 100%;
+}
