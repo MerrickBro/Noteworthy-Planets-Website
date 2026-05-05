@@ -15,16 +15,19 @@
     border: 4px solid #000000;
     border-radius: 1svb;
     height: 95%;
-    width: 25%;
+    width: 24%;
     margin: 0.5%;
     align-items: center;
 }
 
 #S2-Top {
-    height: 40%;
+    height: 53%;
     width: 100%;
-    top: 0%;
     margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 #S2-TitleFrame {
@@ -38,9 +41,16 @@
 }
 
 #S2-LogoFrame {
-    height: 70%;
     width: 100%;
     overflow: hidden;
+    display: flex;
+}
+
+#S2-TitleAndInfo {
+    width: fit-content;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 #S2-AppLogo {
@@ -53,7 +63,7 @@
     display: flex;
     justify-content: space-between;
     height: fit-content;
-    align-items: center;
+    align-items: flex-start;
 }
 
 #S2-Author {
@@ -91,7 +101,11 @@
 
 #S2-InfoButton, #S2-InfoButton img {
     aspect-ratio: 106 / 179;
-    height: 100%;
+    height: 70%;
     background-color: #00000000;
     border: 0px;
+    display: flex;
+    margin: 0%;
+    padding: 0%;
+    justify-content: flex-end;
 }
