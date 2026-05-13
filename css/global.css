@@ -5,8 +5,16 @@
 
 html {
     background-color: black;
-    font-family: 'NMSGeoSans', sans-serif;
     color: white;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'NMSGeoSans', sans-serif;
+}
+
+a {
+    color: #b0e0ff;
 }
 
 body {
