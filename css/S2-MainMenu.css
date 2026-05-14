@@ -86,8 +86,9 @@
 #S2-ButtonRow3 {
   display: flex;
   justify-content: space-between;
-  height: 33%;
+  height: 30%;
   align-items: center;
+  margin: 1%;
 }
 
 .S2-Button {
@@ -98,6 +99,7 @@
   border: 2px solid #b0e0ff;
   border-radius: 10px;
   font-size: 25px;
+  margin: 1%;
 }
 
 .WideButton {
