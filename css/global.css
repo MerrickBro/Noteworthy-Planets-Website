@@ -13,6 +13,11 @@ html {
     font-family: 'NMSGeoSans', sans-serif;
 }
 
+button,
+a {
+    cursor: pointer;
+}
+
 a {
     color: #b0e0ff;
 }

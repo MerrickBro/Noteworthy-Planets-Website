@@ -1,3 +1,24 @@
+// --== Variables ==--
+let Glyphs = [
+    { image: "assets/PORTALSYMBOL.0.png", id: "0" },
+    { image: "assets/PORTALSYMBOL.1.png", id: "1" },
+    { image: "assets/PORTALSYMBOL.2.png", id: "2" },
+    { image: "assets/PORTALSYMBOL.3.png", id: "3" },
+    { image: "assets/PORTALSYMBOL.4.png", id: "4" },
+    { image: "assets/PORTALSYMBOL.5.png", id: "5" },
+    { image: "assets/PORTALSYMBOL.6.png", id: "6" },
+    { image: "assets/PORTALSYMBOL.7.png", id: "7" },
+    { image: "assets/PORTALSYMBOL.8.png", id: "8" },
+    { image: "assets/PORTALSYMBOL.9.png", id: "9" },
+    { image: "assets/PORTALSYMBOL.A.png", id: "A" },
+    { image: "assets/PORTALSYMBOL.B.png", id: "B" },
+    { image: "assets/PORTALSYMBOL.C.png", id: "C" },
+    { image: "assets/PORTALSYMBOL.D.png", id: "D" },
+    { image: "assets/PORTALSYMBOL.E.png", id: "E" },
+    { image: "assets/PORTALSYMBOL.F.png", id: "F" }
+];
+
+
 // --== Screen Switch ==--
 function switchScreen(id) {
     document.querySelectorAll(".screen, .active").forEach(s => {
