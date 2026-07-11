@@ -23,13 +23,13 @@ let Glyphs = [
 function switchScreen(id) {
     document.querySelectorAll(".screen, .active").forEach(s => {
         s.classList.remove("active");
-        s.classList.add("screen");
+        s.classList.add("inactive");
     });
 
     const screen = document.getElementById(id);
     if (!screen) return;
 
-    screen.classList.remove("screen");
+    screen.classList.remove("inactive");
     screen.classList.add("active");
 }
 

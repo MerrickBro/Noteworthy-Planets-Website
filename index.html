@@ -42,7 +42,7 @@
             </div>
         </div>
         <!--== Main Menu ==-->
-        <div id="S2" class="screen">
+        <div id="S2" class="inactive">
             <div id="S2-Main">
                 <div id="S2-Top">
                     <div id="S2-LogoFrame">
@@ -66,7 +66,7 @@
                 <div id="S2-Bottom">
                     <div id="S2-ButtonRow1">
                         <button id="S2-RefreshButton" class="S2-Button">
-                            <img src="assets/PORTALSYMBOL.F.png" alt="Planet Fetcher">
+                            <img src="assets/PORTALSYMBOL.9.png" alt="Planet Fetcher">
                         </button>
                     </div>
                     <div id="S2-ButtonRow2">
@@ -82,39 +82,46 @@
                             Post Your Own Found Planet
                         </button>
                         <button id="S2-GlyphButton" class="S4REDIRECT S2-Button" onclick="switchScreen(`S4`)">
-                            <img src="assets/PORTALSYMBOL.9.png" alt="Glyph Generator">
+                            <img src="assets/PORTALSYMBOL.F.png" alt="Glyph Generator">
                         </button>
                     </div>
                 </div>
             </div>
         </div>
         <!--== Info & Settings Screen ==-->
-        <div id="S3" class="screen">
-            <!-- HTML for info & settings screen -->
+        <div id="S3" class="inactive">
+            <button id="S3-MenuButton" class="S2REDIRECT S3-Button" onclick="switchScreen(`S2`)">
+                <img src="assets/Atlas.png" alt="Return">
+            </button>
+            <div id="S3-Main">
+                <div id="S3-Credits"></div>
+                <div id="S3-Settings"></div>
+                <div id="S3-Notes"></div>
+            </div>
         </div>
 
         <!--== Glyph Generator Screen ==-->
-        <div id="S4" class="screen">
+        <div id="S4" class="inactive">
             <!-- HTML for glyph generator screen -->
         </div>
         
         <!--== Planet Viewing Screen ==-->
-        <div id="S5" class="screen">
+        <div id="S5" class="inactive">
             <!-- HTML for planet viewing screen -->
         </div>
         
         <!--== Planet Info Screen ==-->
-        <div id="S6" class="screen">
+        <div id="S6" class="inactive">
             <!-- HTML for planet info screen -->
         </div>
         
         <!--== Planet Search Screen ==-->
-        <div id="S7" class="screen">
+        <div id="S7" class="inactive">
             <!-- HTML for planet search screen -->
         </div>
         
         <!--== Planet Post Screen ==-->
-        <div id="S8" class="screen">
+        <div id="S8" class="inactive">
             <!-- HTML for planet post screen -->
         </div>
 
