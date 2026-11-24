@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/S1-Loading.css">
         <link rel="stylesheet" href="css/S2-MainMenu.css">
+        <link rel="stylesheet" href="css/S3-Info.css">
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <link
             rel="icon"
@@ -90,14 +91,86 @@
         </div>
         <!--== Info & Settings Screen ==-->
         <div id="S3" class="inactive">
-            <button id="S3-MenuButton" class="S2REDIRECT S3-Button" onclick="switchScreen(`S2`)">
-                <img src="assets/Atlas.png" alt="Return">
+            <button id="S3-MenuButton" class="S2REDIRECT" onclick="switchScreen(`S2`)">
+                <img src="assets/Atlas.png" alt="Return to menu">
             </button>
             <div id="S3-Main">
-                <div id="S3-Credits"></div>
-                <div id="S3-Settings"></div>
-                <div id="S3-Notes"></div>
+                <div id="S3-Credits" class="S3-Panel">
+                    <p class="S3-Row">
+                        Most info &amp; photos from:
+                        <a href="https://nomanssky.fandom.com/wiki/No_Man%27s_Sky_Wiki" target="_blank" rel="noopener">No Man's Sky Wiki</a>
+                    </p>
+                    <p class="S3-Row">
+                        Coded By: Merrick Bublitz
+                        (<a href="https://github.com/MerrickBro" target="_blank" rel="noopener">MerrickBro</a>)
+                    </p>
+                    <p class="S3-Row">Music By: 65daysofstatic &amp; Paul Weir</p>
+                    <p class="S3-Row">Shared Planets By: Posters (You!)</p>
+                </div>
+                <div id="S3-Settings" class="S3-Panel">
+                    <div class="S3-Row S3-NowPlaying">
+                        <span>Now Playing:</span>
+                        <span id="currentTitle">Nothing yet</span>
+                        <span id="currentArtist"></span>
+                    </div>
+                    <label class="S3-Row S3-SliderRow">
+                        <span>Music Volume:</span>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.01">
+                        <span id="S3-VolumeValue" class="S3-SliderValue"></span>
+                    </label>
+                    <label class="S3-Row S3-SliderRow">
+                        <span>Music Speed:</span>
+                        <input type="range" id="S3-SpeedSlider" min="0.5" max="2" step="0.05" value="1">
+                        <span id="S3-SpeedValue" class="S3-SliderValue">1.00x</span>
+                    </label>
+                    <button id="S3-PrevButton" class="S3-Row S3-Button">Music Prev</button>
+                    <button id="S3-NextButton" class="S3-Row S3-Button">Music Next</button>
+                    <button id="S3-ToggleButton" class="S3-Row S3-Button">Music Pause</button>
+                    <button id="S3-RefreshButton" class="S3-Row S3-Button S3-Spaced">Planet Refresh</button>
+                </div>
+                <div id="S3-Notes" class="S3-Panel">
+                    <p class="S3-Row S3-NotesText">
+                        Notes: Share planets you find in No Man's Sky. Planets are listed by the posters who found them.
+                    </p>
+                    <div id="S3-GuideRow">
+                        <button class="S3-Button" onclick="openPopup(`P1`)">Image Guide</button>
+                        <button class="S3-Button" onclick="openPopup(`P2`)">Name Guide</button>
+                        <button class="S3-Button" onclick="openPopup(`P3`)">Sentinel Guide</button>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <!--== Guide Popups ==-->
+        <div id="PopupBackdrop" class="P-Closed" onclick="closePopup()"></div>
+        <div id="P1" class="P-Popup P-Closed" role="dialog" aria-labelledby="P1-Title">
+            <div class="P-Header">
+                <h2 id="P1-Title">Image Input Guide</h2>
+                <button class="P-Close" onclick="closePopup()" aria-label="Close">X</button>
+            </div>
+            <ol class="P-Box P-Steps">
+                <li>Take a screenshot in-game</li>
+                <li>Post the screenshot to <a href="https://imgur.com/upload" target="_blank" rel="noopener">Imgur</a></li>
+                <li>Right click the image and "Copy image address"</li>
+                <li>Paste the address into the image input box</li>
+            </ol>
+        </div>
+        <div id="P2" class="P-Popup P-Closed" role="dialog" aria-labelledby="P2-Title">
+            <div class="P-Header">
+                <h2 id="P2-Title">Name Input Guide</h2>
+                <button class="P-Close" onclick="closePopup()" aria-label="Close">X</button>
+            </div>
+            <p class="P-Box">If you have posted here before, make sure you put your exact name in the input!</p>
+            <p class="P-Box P-SubTitle">All submitted names</p>
+            <ol id="P2-NameList" class="P-Box P-List"></ol>
+        </div>
+        <div id="P3" class="P-Popup P-Closed" role="dialog" aria-labelledby="P3-Title">
+            <div class="P-Header">
+                <h2 id="P3-Title">Sentinel Input Guide</h2>
+                <button class="P-Close" onclick="closePopup()" aria-label="Close">X</button>
+            </div>
+            <p class="P-Box P-SubTitle">Sentinel Activity Chart</p>
+            <div id="P3-Chart"></div>
         </div>
 
         <!--== Glyph Generator Screen ==-->
@@ -126,5 +199,6 @@
         </div>
 
         <script src="js/app.js"></script>
+        <script src="js/S3-Info.js"></script>
     </body>
 </html>
