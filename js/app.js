@@ -33,6 +33,7 @@ function switchScreen(id) {
     screen.classList.add("active");
 }
 
+// --== Music Variables ==--
 const tracks = [
     { file: "music/Adrift - 65daysofstatic.flac", title: "Adrift", artist: "65daysofstatic" },
     { file: "music/Airy-O - Paul Weir.flac", title: "Airy-O", artist: "Paul Weir" },
@@ -55,30 +56,44 @@ const tracks = [
 let currentAudioIndex = 0;
 let audio = new Audio();
 
-let slider = document.getElementById("volumeSlider");
+let volumeSlider = document.getElementById("volumeSlider");
+let speedSlider = document.getElementById("speedSlider");
+let speedValue = document.getElementById("speedValue");
+let currentTitle = document.getElementById("currentTitle");
+let currentArtist = document.getElementById("currentArtist");
+let musicPrevButton = document.getElementById("musicPrevButton");
+let musicNextButton = document.getElementById("musicNextButton");
+let musicToggleButton = document.getElementById("musicToggleButton");
 
+
+// --== Music Functions ==--
+// -= Volume =-
 let setVolume = (value) => {
     audio.volume = value / 2;
 };
 
-if (slider) {
-    slider.value = 0.1;
+// -= Speed =-
+let setSpeed = (value) => {
+    audio.playbackRate = value;
+    audio.defaultPlaybackRate = value;
+    if (speedValue) speedValue.textContent = Number(value).toFixed(2) + "x";
+};
 
-    slider.addEventListener("input", () => {
-        setVolume(slider.value);
-    });
-}
-
-setVolume(slider?.value ?? 0.1);
-
+// -= Now Playing =-
 let displayCurrentTrackInfo = (index) => {
     let track = tracks[index];
     if (!track) return;
 
-    //document.getElementById("currentTitle").textContent = track.title;
-    //document.getElementById("currentArtist").textContent = track.artist;
+    if (currentTitle) currentTitle.textContent = track.title;
+    if (currentArtist) currentArtist.textContent = "by " + track.artist;
 };
 
+// -= Toggle Label =-
+let updateToggleLabel = () => {
+    if (musicToggleButton) musicToggleButton.textContent = audio.paused ? "Music Play" : "Music Pause";
+};
+
+// -= Play =-
 let playTrack = (index) => {
     let track = tracks[index];
     if (!track) return;
@@ -86,21 +101,44 @@ let playTrack = (index) => {
     currentAudioIndex = index;
 
     audio.pause();
-    audio.currentTime = 0;
-
     audio.src = track.file;
+    audio.playbackRate = audio.defaultPlaybackRate;
 
     audio.play().catch(e => console.log("Click page to play"));
 
     displayCurrentTrackInfo(index);
 };
 
+// -= Next / Prev =-
 let playNextTrack = () => {
-    let nextIndex = (currentAudioIndex + 1) % tracks.length;
-    playTrack(nextIndex);
+    playTrack((currentAudioIndex + 1) % tracks.length);
 };
 
+let playPrevTrack = () => {
+    playTrack((currentAudioIndex - 1 + tracks.length) % tracks.length);
+};
+
+// -= Toggle =-
+let toggleMusic = () => {
+    if (!audio.src) return playTrack(currentAudioIndex);
+    audio.paused ? audio.play().catch(e => console.log("Click page to play")) : audio.pause();
+};
+
+
+// --== Music Init ==--
+setVolume(volumeSlider?.value ?? 0.1);
+setSpeed(speedSlider?.value ?? 1);
+
+volumeSlider?.addEventListener("input", () => setVolume(volumeSlider.value));
+speedSlider?.addEventListener("input", () => setSpeed(speedSlider.value));
+musicPrevButton?.addEventListener("click", playPrevTrack);
+musicNextButton?.addEventListener("click", playNextTrack);
+musicToggleButton?.addEventListener("click", toggleMusic);
+
 audio.addEventListener("ended", playNextTrack);
+audio.addEventListener("play", updateToggleLabel);
+audio.addEventListener("pause", updateToggleLabel);
+updateToggleLabel();
 
 window.addEventListener("click", () => {
     if (audio.paused) {

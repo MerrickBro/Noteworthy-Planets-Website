@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/global.css">
         <link rel="stylesheet" href="css/S1-Loading.css">
         <link rel="stylesheet" href="css/S2-MainMenu.css">
+        <link rel="stylesheet" href="css/S3-Info.css">
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <link
             rel="icon"
@@ -95,7 +96,27 @@
             </button>
             <div id="S3-Main">
                 <div id="S3-Credits"></div>
-                <div id="S3-Settings"></div>
+                <div id="S3-Settings">
+                    <div id="S3-NowPlaying" class="S3-Row">
+                        <span class="S3-Label">Now Playing:</span>
+                        <span id="currentTitle">-</span>
+                        <span id="currentArtist"></span>
+                    </div>
+                    <label class="S3-Row">
+                        <span class="S3-Label">Music Volume:</span>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.1">
+                    </label>
+                    <label class="S3-Row">
+                        <span class="S3-Label">Music Speed:</span>
+                        <input type="range" id="speedSlider" min="0.5" max="1.5" step="0.05" value="1">
+                        <span id="speedValue">1.00x</span>
+                    </label>
+                    <div class="S3-Row">
+                        <button id="musicPrevButton" class="S3-Button">Music Prev</button>
+                        <button id="musicToggleButton" class="S3-Button">Music Toggle</button>
+                        <button id="musicNextButton" class="S3-Button">Music Next</button>
+                    </div>
+                </div>
                 <div id="S3-Notes"></div>
             </div>
         </div>
