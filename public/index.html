@@ -9,6 +9,10 @@
         <link rel="stylesheet" href="css/S2-MainMenu.css">
         <link rel="stylesheet" href="css/S3-Info.css">
         <link rel="stylesheet" href="css/S4-GlyphGenerator.css">
+        <link rel="stylesheet" href="css/S5-Viewer.css">
+        <link rel="stylesheet" href="css/S6-PlanetInfo.css">
+        <link rel="stylesheet" href="css/S7-Search.css">
+        <link rel="stylesheet" href="css/S8-Post.css">
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
         <link
             rel="icon"
@@ -195,22 +199,198 @@
         
         <!--== Planet Viewing Screen ==-->
         <div id="S5" class="inactive">
-            <!-- HTML for planet viewing screen -->
+            <img id="S5-Image" class="PlanetBackdrop" alt="">
+            <div class="PlanetShade"></div>
+            <button class="BackButton S2REDIRECT" onclick="switchScreen(`S2`)">
+                <img src="assets/Atlas.png" alt="Return to menu">
+            </button>
+            <div id="S5-Empty" class="PlanetCard" hidden>
+                <p>No planets have been posted yet.</p>
+                <button class="PlanetButton S8REDIRECT" onclick="switchScreen(`S8`)">Post the first one</button>
+            </div>
+            <div id="S5-Header" class="PlanetCard">
+                <h2 id="S5-Name" class="PlanetName"></h2>
+                <p id="S5-System"></p>
+                <p id="S5-Galaxy" class="PlanetMuted"></p>
+            </div>
+            <div id="S5-Glyphs" class="PlanetGlyphs" aria-label="Portal address"></div>
+            <div id="S5-Actions">
+                <button class="PlanetIconButton S6REDIRECT" onclick="switchScreen(`S6`)" aria-label="Planet info">i</button>
+                <button class="PlanetIconButton S7REDIRECT" onclick="switchScreen(`S7`)" aria-label="Search planets">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="10" cy="10" r="6.5"/><path d="M15 15l6 6"/></svg>
+                </button>
+            </div>
+            <div id="S5-Footer" class="PlanetCard">
+                <p id="S5-Description" class="PlanetDescription"></p>
+                <p id="S5-Poster" class="PlanetMuted"></p>
+                <div class="PlanetNav">
+                    <button class="PlanetNavButton PlanetPrev" aria-label="Previous planet">&lt;</button>
+                    <span class="PlanetCounter"></span>
+                    <button class="PlanetNavButton PlanetNext" aria-label="Next planet">&gt;</button>
+                </div>
+            </div>
         </div>
         
         <!--== Planet Info Screen ==-->
         <div id="S6" class="inactive">
-            <!-- HTML for planet info screen -->
+            <img id="S6-Backdrop" class="PlanetBackdrop S6-Blur" alt="">
+            <div class="PlanetShade"></div>
+            <button class="BackButton S5REDIRECT" onclick="switchScreen(`S5`)">
+                <img src="assets/Atlas.png" alt="Back to planet viewer">
+            </button>
+            <div id="S6-Main" class="ScreenPanel">
+                <div id="S6-Header">
+                    <h2 id="S6-Name" class="PlanetName"></h2>
+                    <p id="S6-System"></p>
+                    <p id="S6-Galaxy" class="PlanetMuted"></p>
+                </div>
+                <div id="S6-Body">
+                    <div id="S6-ImageFrame">
+                        <img id="S6-Image" alt="">
+                        <img id="S6-Hazard" alt="">
+                        <p id="S6-Sentinel"></p>
+                    </div>
+                    <div id="S6-Details">
+                        <div class="S6-Row"><span>Description</span><b id="S6-Description"></b></div>
+                        <div class="S6-Row"><span>Resource Deposits</span><b id="S6-Resources"></b></div>
+                        <div class="S6-Row"><span>Economy</span><b id="S6-Economy"></b></div>
+                        <div class="S6-Row"><span>Hazard</span><b id="S6-HazardName"></b></div>
+                        <div class="S6-Row"><span>Posted By</span><b id="S6-Poster"></b></div>
+                        <div class="S6-Row">
+                            <span>Portal Address</span>
+                            <div id="S6-Glyphs" class="PlanetGlyphs"></div>
+                            <div id="S6-CodeRow"><code id="S6-Code"></code><button id="S6-Copy" class="PlanetButton">Copy</button></div>
+                        </div>
+                    </div>
+                </div>
+                <p id="S6-Facts"></p>
+                <div class="PlanetNav">
+                    <button class="PlanetNavButton PlanetPrev" aria-label="Previous planet">&lt;</button>
+                    <span class="PlanetCounter"></span>
+                    <button class="PlanetNavButton PlanetNext" aria-label="Next planet">&gt;</button>
+                </div>
+            </div>
         </div>
         
         <!--== Planet Search Screen ==-->
         <div id="S7" class="inactive">
-            <!-- HTML for planet search screen -->
+            <button class="BackButton S2REDIRECT" onclick="switchScreen(`S2`)">
+                <img src="assets/Atlas.png" alt="Return to menu">
+            </button>
+            <div id="S7-Main" class="ScreenPanel">
+                <h2 class="ScreenTitle">Search Planets</h2>
+                <div id="S7-Layout">
+                    <div id="S7-SearchArea">
+                        <div id="S7-Filters">
+                            <input id="S7-Text" type="search" placeholder="Name, system, poster or address" autocomplete="off" aria-label="Search text">
+                            <select id="S7-Galaxy" aria-label="Galaxy"><option value="">All Galaxies</option></select>
+                            <select id="S7-Feature" aria-label="Feature"><option value="">Any Feature</option></select>
+                            <select id="S7-Sort" aria-label="Sort">
+                                <option value="new">Newest first</option>
+                                <option value="old">Oldest first</option>
+                                <option value="name">Name A-Z</option>
+                            </select>
+                        </div>
+                        <p id="S7-Count" aria-live="polite"></p>
+                        <ol id="S7-Results"></ol>
+                    </div>
+                    <aside id="S7-Leaderboard">
+                        <h3>Top Posters</h3>
+                        <ol id="S7-Posters"></ol>
+                    </aside>
+                </div>
+            </div>
         </div>
         
         <!--== Planet Post Screen ==-->
         <div id="S8" class="inactive">
-            <!-- HTML for planet post screen -->
+            <button class="BackButton S2REDIRECT" onclick="switchScreen(`S2`)">
+                <img src="assets/Atlas.png" alt="Return to menu">
+            </button>
+            <form id="S8-Main" novalidate>
+                <h2 class="ScreenTitle">Post Your Planet</h2>
+                <div id="S8-Columns">
+                    <section class="S8-Panel">
+                        <label class="S8-Field">
+                            <span>Planet Name</span>
+                            <input name="name" maxlength="60" required autocomplete="off">
+                        </label>
+                        <label class="S8-Field">
+                            <span>Star System</span>
+                            <input name="star_system" maxlength="60" required autocomplete="off">
+                        </label>
+                        <label class="S8-Field">
+                            <span>Posted By <button type="button" class="S8-Help" onclick="openPopup(`P2`)" aria-label="Name guide">?</button></span>
+                            <input name="poster" maxlength="40" required list="S8-PosterList" autocomplete="off">
+                            <datalist id="S8-PosterList"></datalist>
+                        </label>
+                        <label class="S8-Field">
+                            <span>Galaxy</span>
+                            <select name="galaxy" data-options="galaxies"></select>
+                        </label>
+                        <div class="S8-Pair">
+                            <label class="S8-Field">
+                                <span>Type</span>
+                                <select name="type" data-options="types"></select>
+                            </label>
+                            <label class="S8-Field">
+                                <span>Biome</span>
+                                <select name="biome" data-options="biomes"></select>
+                            </label>
+                        </div>
+                        <div class="S8-Pair">
+                            <label class="S8-Field">
+                                <span>Economy</span>
+                                <select name="economy" data-options="economies"></select>
+                            </label>
+                            <label class="S8-Field">
+                                <span>Race</span>
+                                <select name="lifeform" data-options="lifeforms"></select>
+                            </label>
+                        </div>
+                        <label class="S8-Field">
+                            <span>Sentinels <button type="button" class="S8-Help" onclick="openPopup(`P3`)" aria-label="Sentinel guide">?</button></span>
+                            <select name="sentinel" data-options="sentinels"></select>
+                        </label>
+                        <div class="S8-Field">
+                            <span>Resources</span>
+                            <div class="S8-Trio">
+                                <select name="resource1" data-options="primaryResources" aria-label="Resource 1"></select>
+                                <select name="resource2" data-options="resources" aria-label="Resource 2"></select>
+                                <select name="resource3" data-options="resources" aria-label="Resource 3"></select>
+                            </div>
+                        </div>
+                        <div class="S8-Field">
+                            <span>Hazard</span>
+                            <div id="S8-Hazards" role="radiogroup" aria-label="Hazard"></div>
+                        </div>
+                    </section>
+                    <section class="S8-Panel">
+                        <div class="S8-Field">
+                            <span>Portal Address</span>
+                            <div id="S8-GlyphSlots"></div>
+                            <div id="S8-GlyphPad"></div>
+                            <div id="S8-GlyphRow">
+                                <input id="S8-GlyphCode" maxlength="14" spellcheck="false" autocomplete="off" placeholder="Or type it: 0000:0000:0000" aria-label="Portal address">
+                                <button type="button" id="S8-GlyphBack" class="S8-SmallButton" aria-label="Remove last glyph">Del</button>
+                            </div>
+                        </div>
+                        <label class="S8-Field">
+                            <span>Image Link <button type="button" class="S8-Help" onclick="openPopup(`P1`)" aria-label="Image guide">?</button></span>
+                            <input name="image" type="url" required placeholder="https://i.imgur.com/..." autocomplete="off">
+                        </label>
+                        <div id="S8-Preview"><span>Image preview</span><img alt="" hidden></div>
+                        <label class="S8-Field">
+                            <span>Interesting Facts (optional)</span>
+                            <textarea name="facts" maxlength="1000" rows="4"></textarea>
+                        </label>
+                    </section>
+                </div>
+                <div id="S8-Footer">
+                    <p id="S8-Status" aria-live="polite"></p>
+                    <button type="submit" id="S8-Upload">Upload Planet</button>
+                </div>
+            </form>
         </div>
 
         <script src="js/app.js"></script>
@@ -219,5 +399,8 @@
         <script src="js/S2-MainMenu.js"></script>
         <script src="js/S3-Info.js"></script>
         <script src="js/S4-GlyphGenerator.js"></script>
+        <script src="js/S5-Viewer.js"></script>
+        <script src="js/S7-Search.js"></script>
+        <script src="js/S8-Post.js"></script>
     </body>
 </html>

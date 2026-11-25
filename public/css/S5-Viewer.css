@@ -1,0 +1,203 @@
+/* --== Shared Planet Parts ==-- */
+.PlanetBackdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: url("../assets/Background.jpg") center / cover;
+}
+
+.PlanetShade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#000000aa, #00000000 30%, #00000000 65%, #000000cc);
+    pointer-events: none;
+}
+
+.PlanetCard {
+    position: relative;
+    padding: 10px 24px;
+    text-align: center;
+    background-color: #00000088;
+    backdrop-filter: blur(6px);
+    border: 2px solid #b0e0ff88;
+    border-radius: 14px;
+}
+
+.PlanetCard p {
+    margin: 2px 0;
+}
+
+.PlanetName {
+    margin: 0;
+    font-size: 42px;
+    font-weight: normal;
+    overflow-wrap: anywhere;
+}
+
+.PlanetMuted {
+    opacity: 0.75;
+}
+
+.PlanetDescription {
+    font-size: 22px;
+}
+
+.PlanetGlyphs {
+    display: flex;
+    gap: 4px;
+}
+
+.PlanetGlyphs img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.PlanetButton {
+    padding: 8px 18px;
+    color: white;
+    background-color: #b0e0ff22;
+    border: 2px solid #b0e0ff;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.PlanetIconButton {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    color: white;
+    background-color: #00000088;
+    border: 2px solid #b0e0ff;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.PlanetIconButton:hover,
+.PlanetButton:hover,
+.PlanetNavButton:hover {
+    background-color: #b0e0ff44;
+}
+
+.PlanetNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 6px;
+}
+
+.PlanetNavButton {
+    width: 52px;
+    height: 48px;
+    color: white;
+    background-color: #00000088;
+    border: 2px solid #b0e0ff;
+    border-radius: 10px;
+    font-size: 26px;
+}
+
+.PlanetCounter {
+    min-width: 90px;
+    font-size: 28px;
+    text-align: center;
+}
+
+/* --== Viewer ==-- */
+#S5 {
+    position: fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    overflow: hidden;
+}
+
+#S5-Header {
+    max-width: min(700px, 80%);
+}
+
+#S5-Glyphs {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    padding: 6px;
+    background-color: #00000066;
+    border-radius: 10px;
+}
+
+#S5-Actions {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#S5-Footer {
+    min-width: min(460px, 100%);
+}
+
+#S5-Empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+}
+
+/* --== Mobile ==-- */
+@media (max-width: 800px) {
+    #S5 {
+        padding: 10px;
+    }
+
+    #S5-Header {
+        max-width: none;
+        width: calc(100% - 60px);
+        margin-left: 60px;
+        padding: 8px 12px;
+    }
+
+    .PlanetName {
+        font-size: 28px;
+    }
+
+    #S5-Glyphs {
+        top: auto;
+        bottom: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+    }
+
+    .PlanetGlyphs img {
+        width: 24px;
+        height: 24px;
+    }
+
+    #S5-Actions {
+        top: auto;
+        bottom: 250px;
+        right: 10px;
+        transform: none;
+    }
+
+    #S5-Footer {
+        width: 100%;
+        padding: 8px 12px;
+    }
+
+    .PlanetDescription {
+        font-size: 18px;
+    }
+}
