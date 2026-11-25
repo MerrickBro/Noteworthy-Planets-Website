@@ -87,7 +87,7 @@
     border-radius: 8px;
 }
 
-.S6-Row span {
+.S6-Row > span {
     font-size: 14px;
     color: #b0e0ff;
 }
@@ -95,6 +95,41 @@
 .S6-Row b {
     font-weight: normal;
     font-size: 20px;
+}
+
+/* --== Wiki Icons ==-- */
+#S6-Resources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+}
+
+.S6-Item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.S6-Icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.S6-Icon-race {
+    border-radius: 50%;
+}
+
+.S6-Icon-biome {
+    width: 56px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.S6-Icon-sentinel {
+    width: 28px;
+    height: 28px;
 }
 
 #S6-Glyphs {

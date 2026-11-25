@@ -1,0 +1,47 @@
+Images in biome/, race/, resource/ and sentinel/ come from the No Man's Sky Wiki
+(https://nomanssky.fandom.com). Game art by Hello Games. Scaled thumbnails, original file pages below.
+
+resource/Ammonia.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.BIOME.TOXIC.png
+resource/Basalt.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.BIOME.LAVA.png
+resource/Cobalt.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.CAVE.1.png
+resource/Dioxite.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.BIOME.COLD.png
+resource/Faecium.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.PLANT.POOP.png
+resource/Gold.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.ASTEROID.2.png
+resource/MagnetisedFerrite.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.LAND.3.png
+resource/Mordite.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.CREATURE.1.png
+resource/Paraffinium.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.BIOME.LUSH.png
+resource/Phosphorus.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.BIOME.HOT.png
+resource/Pyrite.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.BIOME.DUSTY.png
+resource/RustedMetal.webp  https://nomanssky.fandom.com/wiki/File:SPACEGUNK.3.png
+resource/Salt.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.WATER.1.png
+resource/Silver.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.ASTEROID.1.png
+resource/Sodium.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.CATALYST.1.png
+resource/Uranium.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.BIOME.RADIO.png
+resource/Copper.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.YELLOW.2.png
+resource/ActivatedCopper.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.EXYELLOW.2.png
+resource/Cadmium.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.RED.2.png
+resource/ActivatedCadmium.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.EXRED.2.png
+resource/Emeril.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.GREEN.2.png
+resource/ActivatedEmeril.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.EXGREEN.2.png
+resource/Indium.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.BLUE.2.png
+resource/ActivatedIndium.webp  https://nomanssky.fandom.com/wiki/File:SUBSTANCE.EXBLUE.2.png
+resource/Quartzite.webp  https://nomanssky.fandom.com/wiki/File:Substance.purple.2.png
+resource/ActivatedQuartzite.webp  https://nomanssky.fandom.com/wiki/File:Substance.expurple.2.png
+race/Gek.webp  https://nomanssky.fandom.com/wiki/File:Gek_Bird_Race.png
+race/Korvax.webp  https://nomanssky.fandom.com/wiki/File:Korvax.png
+race/Vykeen.webp  https://nomanssky.fandom.com/wiki/File:Vy'keen_Reptillians_Race.png
+sentinel/LowSentinelActivity.webp  https://nomanssky.fandom.com/wiki/File:WANTEDMESSAGEICON.png
+sentinel/HighSentinelActivity.webp  https://nomanssky.fandom.com/wiki/File:QUADMESSAGEICON.png
+sentinel/AggressiveSentinels.webp  https://nomanssky.fandom.com/wiki/File:WALKERMESSAGEICON.png
+sentinel/CorruptedSentinels.webp  https://nomanssky.fandom.com/wiki/File:CORRUPTDRONEMESSAGEICON.png
+biome/Lush.webp  https://nomanssky.fandom.com/wiki/File:Oitiw_XVI_Surface.png
+biome/Barren.webp  https://nomanssky.fandom.com/wiki/File:Eoti_Surface1.png
+biome/Dead.webp  https://nomanssky.fandom.com/wiki/File:Bifronfie_Mihar_Surface.png
+biome/Exotic.webp  https://nomanssky.fandom.com/wiki/File:Dulertru_Jioki_Space1.png
+biome/MegaExotic.webp  https://nomanssky.fandom.com/wiki/File:Sobrought_Surface.png
+biome/Scorched.webp  https://nomanssky.fandom.com/wiki/File:Edaemon_VII_Burning_Sunrise.png
+biome/Frozen.webp  https://nomanssky.fandom.com/wiki/File:Bethi_V_Surface.png
+biome/Toxic.webp  https://nomanssky.fandom.com/wiki/File:Litonsin_Surface.png
+biome/Irradiated.webp  https://nomanssky.fandom.com/wiki/File:Eforashv_P27_Surface1.png
+biome/Marsh.webp  https://nomanssky.fandom.com/wiki/File:20200928121508_1.jpg
+biome/Volcanic.webp  https://nomanssky.fandom.com/wiki/File:20200928125842_1.jpg

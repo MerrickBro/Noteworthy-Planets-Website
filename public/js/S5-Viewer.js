@@ -9,6 +9,8 @@ const HAZARD_IMAGES = {
     Toxic: "assets/Protection.Toxic.png"
 };
 
+const NO_ICON = ["Unknown", "None", "Uncharted", "Abandoned", "Sentinels Unknown"];
+
 
 // --== Helpers ==--
 let setText = (id, text) => document.getElementById(id).textContent = text;
@@ -20,6 +22,28 @@ let fillGlyphs = (holder, glyphs) => {
         img.src = glyphImage(id);
         img.alt = id;
         holder.appendChild(img);
+    });
+};
+
+// -= Wiki Icons =-
+let iconPath = (folder, value) => "assets/" + folder + "/" + value.replace(/[^A-Za-z]/g, "") + ".webp";
+
+let fillIcons = (id, folder, values) => {
+    let holder = document.getElementById(id);
+    holder.innerHTML = "";
+    values.forEach(value => {
+        let item = document.createElement("span");
+        item.className = "S6-Item";
+        if (!NO_ICON.includes(value)) {
+            let img = document.createElement("img");
+            img.className = "S6-Icon S6-Icon-" + folder;
+            img.src = iconPath(folder, value);
+            img.alt = "";
+            img.addEventListener("error", () => img.remove());
+            item.appendChild(img);
+        }
+        item.append(value);
+        holder.appendChild(item);
     });
 };
 
@@ -61,12 +85,12 @@ let showPlanet = (index) => {
     setText("S6-Name", planet.name);
     setText("S6-System", planet.star_system === "Unknown" ? "Unknown System" : planet.star_system);
     setText("S6-Galaxy", planet.galaxy);
-    setText("S6-Sentinel", planet.sentinel === "Unknown" ? "Sentinels Unknown" : planet.sentinel);
+    fillIcons("S6-Sentinel", "sentinel", [planet.sentinel === "Unknown" ? "Sentinels Unknown" : planet.sentinel]);
     setText("S6-Description", description);
-    setText("S6-Resources", [planet.resource1, planet.resource2, planet.resource3].join(", "));
-    setText("S6-BiomeType", planet.biome_type);
+    fillIcons("S6-Resources", "resource", [planet.resource1, planet.resource2, planet.resource3].filter(Boolean));
+    fillIcons("S6-BiomeType", "biome", [planet.biome_type]);
     setText("S6-Economy", [planet.economy_type, planet.economy].filter(v => v !== "Unknown" && v !== "None").join(", ") || planet.economy);
-    setText("S6-Race", planet.lifeform);
+    fillIcons("S6-Race", "race", [planet.lifeform]);
     setText("S6-HazardName", planet.hazard);
     setText("S6-Poster", planet.poster);
     setText("S6-Code", formatGlyphs(planet.glyphs));
