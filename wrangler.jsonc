@@ -19,6 +19,10 @@
       "migrations_dir": "migrations"
     }
   ],
+  "vars": {
+    "SUPABASE_URL": "https://xvhukcmeygqdykuvmqti.supabase.co",
+    "SUPABASE_KEY": "sb_publishable_DXN4F8vQJSFhDuhaZHv81g_veAEi1qq"
+  },
   "compatibility_flags": [
     "nodejs_compat"
   ]
