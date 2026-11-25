@@ -253,7 +253,9 @@
                     <div id="S6-Details">
                         <div class="S6-Row"><span>Description</span><b id="S6-Description"></b></div>
                         <div class="S6-Row"><span>Resource Deposits</span><b id="S6-Resources"></b></div>
+                        <div class="S6-Row"><span>Biome</span><b id="S6-BiomeType"></b></div>
                         <div class="S6-Row"><span>Economy</span><b id="S6-Economy"></b></div>
+                        <div class="S6-Row"><span>Race</span><b id="S6-Race"></b></div>
                         <div class="S6-Row"><span>Hazard</span><b id="S6-HazardName"></b></div>
                         <div class="S6-Row"><span>Posted By</span><b id="S6-Poster"></b></div>
                         <div class="S6-Row">
@@ -328,20 +330,28 @@
                             <span>Galaxy</span>
                             <select name="galaxy" data-options="galaxies"></select>
                         </label>
-                        <div class="S8-Pair">
+                        <div class="S8-Trio">
                             <label class="S8-Field">
                                 <span>Type</span>
                                 <select name="type" data-options="types"></select>
                             </label>
                             <label class="S8-Field">
                                 <span>Biome</span>
+                                <select name="biome_type" data-options="biomeTypes"></select>
+                            </label>
+                            <label class="S8-Field">
+                                <span>Description</span>
                                 <select name="biome" data-options="biomes"></select>
                             </label>
                         </div>
-                        <div class="S8-Pair">
+                        <div class="S8-Trio">
                             <label class="S8-Field">
                                 <span>Economy</span>
                                 <select name="economy" data-options="economies"></select>
+                            </label>
+                            <label class="S8-Field">
+                                <span>Trade</span>
+                                <select name="economy_type" data-options="economyTypes"></select>
                             </label>
                             <label class="S8-Field">
                                 <span>Race</span>
