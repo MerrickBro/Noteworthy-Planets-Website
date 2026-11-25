@@ -70,7 +70,8 @@ let formatGlyphs = (glyphs) => glyphs.match(/.{1,4}/g)?.join(":") ?? "";
 
 let planetDescription = (planet) => {
     if (planet.biome === "Of Light") return planet.type + " Of Light";
-    if (planet.biome.includes("Anomaly") || planet.biome.includes("Globe") || planet.biome.includes("Detected") || planet.biome.includes("Detonation") || planet.biome.includes("Catastrophe")) return planet.biome;
+    let standalone = ["Anomaly", "Globe", "Detected", "Detonation", "Catastrophe", "Dreadworld", "Bead", "Morass"];
+    if (standalone.some(word => planet.biome.includes(word))) return planet.biome;
     return planet.biome + " " + planet.type;
 };
 

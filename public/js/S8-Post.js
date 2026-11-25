@@ -123,8 +123,8 @@ let updatePreview = () => {
 // --== Submit ==--
 // -= Validate =-
 let findProblem = () => {
-    for (let field of ["name", "star_system", "poster"]) {
-        if (!postForm[field].value.trim()) return { field, message: "Fill in " + field.replace("_", " ").replace("poster", "your name") };
+    for (let field of ["name", "poster"]) {
+        if (!postForm[field].value.trim()) return { field, message: "Fill in " + (field === "poster" ? "your name" : "the planet name") };
     }
     if (postGlyphs.length !== 12) return { field: null, message: "Add all 12 glyphs of the portal address" };
     if (!/^https:\/\/.+/.test(postForm.image.value.trim())) return { field: "image", message: "Add an https image link (see the ? guide)" };

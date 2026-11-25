@@ -45,7 +45,7 @@ let showPlanet = (index) => {
     // -= Viewer =-
     document.getElementById("S5-Image").src = planet.image;
     setText("S5-Name", planet.name);
-    setText("S5-System", planet.star_system);
+    setText("S5-System", planet.star_system === "Unknown" ? "Unknown System" : planet.star_system);
     setText("S5-Galaxy", planet.galaxy);
     setText("S5-Description", description);
     setText("S5-Poster", "Posted By: " + planet.poster);
@@ -59,9 +59,9 @@ let showPlanet = (index) => {
     hazard.src = HAZARD_IMAGES[planet.hazard] ?? "";
     hazard.alt = planet.hazard;
     setText("S6-Name", planet.name);
-    setText("S6-System", planet.star_system);
+    setText("S6-System", planet.star_system === "Unknown" ? "Unknown System" : planet.star_system);
     setText("S6-Galaxy", planet.galaxy);
-    setText("S6-Sentinel", planet.sentinel);
+    setText("S6-Sentinel", planet.sentinel === "Unknown" ? "Sentinels Unknown" : planet.sentinel);
     setText("S6-Description", description);
     setText("S6-Resources", [planet.resource1, planet.resource2, planet.resource3].join(", "));
     setText("S6-Economy", planet.economy + " : " + planet.lifeform);
@@ -116,6 +116,13 @@ document.getElementById("S6-Copy").addEventListener("click", async (e) => {
         button.textContent = "Failed";
     }
     setTimeout(() => button.textContent = "Copy", 1500);
+});
+
+
+// -= Broken Images =-["S5-Image", "S6-Image", "S6-Backdrop"].forEach(id => {
+    let img = document.getElementById(id);
+    img.addEventListener("error", () => img.style.opacity = 0);
+    img.addEventListener("load", () => img.style.opacity = 1);
 });
 
 

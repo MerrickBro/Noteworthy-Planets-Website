@@ -50,6 +50,7 @@ let validatePlanet = (body) => {
 
     for (let [field, max] of Object.entries(TEXT_FIELDS)) {
         let value = String(body[field] ?? "").trim();
+        if (field === "star_system" && !value) value = "Unknown";
         if (field !== "facts" && !value) return { error: "Missing " + field.replace("_", " ") };
         if (value.length > max) return { error: field.replace("_", " ") + " is too long" };
         planet[field] = value;

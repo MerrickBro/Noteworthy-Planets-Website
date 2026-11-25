@@ -431,10 +431,10 @@
   "Abandoned"
  ],
  "lifeforms": [
-  "Korvax",
   "Gek",
+  "Korvax",
   "Vy'keen",
-  "System"
+  "None"
  ],
  "primaryResources": [
   "Copper",
@@ -468,7 +468,8 @@
   "Low Sentinel Activity",
   "High Sentinel Activity",
   "Aggressive Sentinels",
-  "Corrupted Sentinels"
+  "Corrupted Sentinels",
+  "Unknown"
  ],
  "hazards": [
   "None",
