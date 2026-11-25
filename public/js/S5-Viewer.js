@@ -119,7 +119,8 @@ document.getElementById("S6-Copy").addEventListener("click", async (e) => {
 });
 
 
-// -= Broken Images =-["S5-Image", "S6-Image", "S6-Backdrop"].forEach(id => {
+// -= Broken Images =-
+["S5-Image", "S6-Image", "S6-Backdrop"].forEach(id => {
     let img = document.getElementById(id);
     img.addEventListener("error", () => img.style.opacity = 0);
     img.addEventListener("load", () => img.style.opacity = 1);
