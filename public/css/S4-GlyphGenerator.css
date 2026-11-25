@@ -1,0 +1,147 @@
+/* --== Screen ==-- */
+#S4 {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/Background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#S4-Main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    width: min(900px, 92%);
+    max-height: 95%;
+    padding: 24px;
+    overflow-y: auto;
+    background-color: #00000077;
+    backdrop-filter: blur(5px);
+    border: 4px solid #000000;
+    border-radius: 1svb;
+}
+
+#S4-Title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+/* --== Glyphs ==-- */
+#S4-Glyphs {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    width: 100%;
+}
+
+.S4-Glyph {
+    aspect-ratio: 1 / 1;
+    padding: 6px;
+    background-color: #00000088;
+    border: 2px solid #b0e0ff55;
+    border-radius: 10px;
+    transition: border-color 0.15s, transform 0.15s;
+}
+
+.S4-Glyph:hover {
+    border-color: #b0e0ff;
+    transform: translateY(-2px);
+}
+
+.S4-Glyph img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.S4-Empty img {
+    visibility: hidden;
+}
+
+/* --== Code ==-- */
+#S4-CodeRow {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+#S4-Code {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 12px;
+    color: white;
+    background-color: #00000088;
+    border: 2px solid #b0e0ff;
+    border-radius: 10px;
+    font-family: monospace;
+    font-size: 36px;
+    letter-spacing: 0.08em;
+    text-align: center;
+}
+
+.S4-SmallButton {
+    padding: 0 20px;
+    color: white;
+    background: transparent;
+    border: 2px solid #b0e0ff;
+    border-radius: 10px;
+    font-size: 22px;
+}
+
+.S4-SmallButton:hover {
+    background-color: #b0e0ff22;
+}
+
+#S4-Hint {
+    margin: 0;
+    opacity: 0.7;
+    font-family: 'NMSFuturaProBook', sans-serif;
+    text-align: center;
+}
+
+#S4-GenerateButton {
+    width: 100%;
+    min-height: 72px;
+    color: white;
+    background-color: #b0e0ff22;
+    border: 2px solid #b0e0ff;
+    border-radius: 12px;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+}
+
+#S4-GenerateButton:hover {
+    background-color: #b0e0ff44;
+}
+
+/* --== Mobile ==-- */
+@media (max-width: 800px) {
+    #S4-Main {
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        padding: 72px 14px 14px;
+        border-radius: 0;
+        justify-content: center;
+    }
+
+    #S4-Title {
+        font-size: 30px;
+    }
+
+    #S4-Glyphs {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #S4-Code {
+        font-size: 22px;
+    }
+
+    #S4-GenerateButton {
+        font-size: 28px;
+    }
+}

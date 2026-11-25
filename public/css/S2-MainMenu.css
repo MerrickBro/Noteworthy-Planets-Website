@@ -1,5 +1,7 @@
 #S2 {
   background-image: url("../assets/Background.jpg");
+  background-size: cover;
+  background-position: center;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -15,7 +17,7 @@
   border: 4px solid #000000;
   border-radius: 1svb;
   height: 95%;
-  width: 24%;
+  width: clamp(340px, 26%, 480px);
   margin: 0.5%;
   align-items: center;
 }
@@ -35,7 +37,7 @@
 }
 
 #S2-Title {
-  font-size: 50px;
+  font-size: clamp(36px, 3.4vw, 54px);
   text-align: center;
   margin: 0%;
 }
@@ -71,63 +73,98 @@
   margin: 0%;
 }
 
-#S2-InfoButton {
-  aspect-ratio: 1 / 1;
-  height: 50px;
-}
-
 #S2-Bottom {
-  height: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   width: 100%;
+  padding: 8px;
 }
 
 #S2-ButtonRow1,
 #S2-ButtonRow2,
 #S2-ButtonRow3 {
   display: flex;
-  justify-content: space-between;
-  height: 30%;
-  align-items: center;
-  margin: 1%;
+  gap: 8px;
+  min-height: 64px;
+  align-items: stretch;
 }
 
 .S2-Button {
-  width: stretch;
-  height: 100%;
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
   background: transparent;
   color: white;
   border: 2px solid #b0e0ff;
   border-radius: 10px;
-  font-size: 25px;
-  margin: 1%;
+  font-size: 22px;
+  line-height: 1.15;
+  transition: background-color 0.15s;
 }
 
-.WideButton {
-  width: 100%;
+.S2-Button:hover {
+  background-color: #b0e0ff22;
 }
 
 #S2-GlyphButton,
-#S2-GlyphButton img,
-#S2-RefreshButton,
-#S2-RefreshButton img {
-  aspect-ratio: 1 / 1;
-  height: 100%;
-  background-color: #00000000;
-  border: 0px;
+#S2-RefreshButton {
+  flex: 0 0 64px;
+  height: 64px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
 }
 
-#S2-GlyphButton, #S2-RefreshButton {
-    width: fit-content;
+#S2-GlyphButton img,
+#S2-RefreshButton img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 #S2-InfoButton {
   aspect-ratio: 106 / 179;
   height: auto;
   width: 15%;
+  max-width: 56px;
   background-color: #00000000;
   border: 0px;
   display: flex;
   margin: 0%;
   padding: 0%;
   justify-content: flex-end;
+}
+
+#S2-InfoButton img {
+  width: 100%;
+}
+
+/* --== Mobile ==-- */
+@media (max-width: 800px) {
+  #S2-Main {
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    margin: 8px;
+  }
+
+  #S2-Top {
+    height: auto;
+    flex: 1;
+    min-height: 0;
+  }
+
+  #S2-LogoFrame {
+    flex: 1;
+    min-height: 0;
+    justify-content: center;
+  }
+
+  #S2-Title {
+    font-size: 38px;
+  }
+
+  .S2-Button {
+    font-size: 19px;
+  }
 }
