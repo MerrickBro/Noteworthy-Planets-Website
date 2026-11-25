@@ -37,9 +37,11 @@ let onDataChange = (fn) => dataListeners.push(fn);
 
 // -= Post =-
 let postPlanet = async (planet) => {
+    let token = await getAccessToken();
+    if (!token) throw new Error("Sign in to post planets");
     let response = await fetch("api/planets", {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: { "content-type": "application/json", authorization: "Bearer " + token },
         body: JSON.stringify(planet)
     });
     let result = await response.json().catch(() => ({ error: "Server error" }));

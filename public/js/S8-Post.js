@@ -1,5 +1,7 @@
 // --== Variables ==--
 let postForm = document.getElementById("S8-Main");
+let gateForm = document.getElementById("S8-Gate");
+let gateStatus = document.getElementById("S8-GateStatus");
 let postStatus = document.getElementById("S8-Status");
 let uploadButton = document.getElementById("S8-Upload");
 let slotHolder = document.getElementById("S8-GlyphSlots");
@@ -29,13 +31,6 @@ let fillDropdowns = async () => {
     postForm.resource3.selectedIndex = 1;
 };
 
-// -= Poster Autofill =-
-let fillPosterList = () => {
-    let list = document.getElementById("S8-PosterList");
-    list.innerHTML = "";
-    Data.posters.forEach(p => list.appendChild(new Option(p.name)));
-};
-
 // -= Hazards =-
 let buildHazards = () => {
     let holder = document.getElementById("S8-Hazards");
@@ -62,6 +57,62 @@ let setHazard = (name) => {
         b.setAttribute("aria-checked", selected);
     });
 };
+
+
+// --== Account ==--
+// -= Show Gate Or Form =-
+let updateAccountView = () => {
+    let signedIn = Boolean(Auth.session);
+    gateForm.hidden = signedIn;
+    postForm.hidden = !signedIn;
+    if (!signedIn) {
+        postForm.poster.value = "";
+        return;
+    }
+
+    document.getElementById("S8-AccountText").textContent = "Signed in" + (Auth.email ? " as " + Auth.email : "");
+    let poster = postForm.poster;
+    poster.readOnly = Boolean(Auth.name);
+    poster.placeholder = Auth.name ? "" : "Pick a poster name (locked after your first post)";
+    poster.value = Auth.name ?? poster.value;
+};
+
+// -= Sign In / Sign Up =-
+let showGateStatus = (message, kind) => {
+    gateStatus.textContent = message;
+    gateStatus.className = kind ? "S8-" + kind : "";
+};
+
+gateForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let action = e.submitter?.dataset.action ?? "signin";
+    let email = gateForm.email.value.trim();
+    let password = gateForm.password.value;
+    if (!email || password.length < 6) {
+        showGateStatus("Enter your email and a password of at least 6 characters", "Error");
+        return;
+    }
+
+    let buttons = gateForm.querySelectorAll("button");
+    buttons.forEach(b => b.disabled = true);
+    showGateStatus(action === "signup" ? "Creating account..." : "Signing in...");
+    try {
+        if (action === "signin") {
+            await signIn(email, password);
+            showGateStatus("");
+        } else if (await signUp(email, password)) {
+            showGateStatus("");
+        } else {
+            showGateStatus("Check your email to confirm your account, then sign in here.", "Success");
+        }
+        gateForm.password.value = "";
+    } catch (err) {
+        showGateStatus(err.message, "Error");
+    }
+    buttons.forEach(b => b.disabled = false);
+});
+
+document.getElementById("S8-SignOut").addEventListener("click", signOut);
 
 
 // --== Glyph Address ==--
@@ -124,7 +175,7 @@ let updatePreview = () => {
 // -= Validate =-
 let findProblem = () => {
     for (let field of ["name", "poster"]) {
-        if (!postForm[field].value.trim()) return { field, message: "Fill in " + (field === "poster" ? "your name" : "the planet name") };
+        if (!postForm[field].value.trim()) return { field, message: field === "poster" ? "Pick a poster name" : "Fill in the planet name" };
     }
     if (postGlyphs.length !== 12) return { field: null, message: "Add all 12 glyphs of the portal address" };
     if (!/^https:\/\/.+/.test(postForm.image.value.trim())) return { field: "image", message: "Add an https image link (see the ? guide)" };
@@ -160,12 +211,13 @@ postForm.addEventListener("submit", async (e) => {
     showStatus("Uploading...");
     try {
         let saved = await postPlanet(planet);
+        Auth.name = saved.poster;
+        updateAccountView();
         await loadPlanets();
         lastPostedId = saved.id;
         showStatus("Planet posted! Thanks, " + saved.poster + ".", "Success");
         uploadButton.textContent = "View Your Planet";
         resetPostForm();
-        postForm.poster.value = saved.poster;
     } catch (err) {
         showStatus(err.message, "Error");
     }
@@ -207,4 +259,5 @@ fillDropdowns();
 buildHazards();
 buildGlyphInput();
 setPostGlyphs("");
-onDataChange(fillPosterList);
+onAuthChange(updateAccountView);
+updateAccountView();

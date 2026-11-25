@@ -138,7 +138,7 @@
                 </div>
                 <div id="S3-Notes" class="S3-Panel">
                     <p class="S3-Row S3-NotesText">
-                        Notes: Share planets you find in No Man's Sky. Planets are listed by the posters who found them.
+                        Notes: Share planets you find in No Man's Sky. Planets are listed by the posters who found them. Posting needs a free account, shared with merrickbro.org.
                     </p>
                     <div id="S3-GuideRow">
                         <button class="S3-Button" onclick="openPopup(`P1`)">Image Guide</button>
@@ -168,7 +168,7 @@
                 <h2 id="P2-Title">Name Input Guide</h2>
                 <button class="P-Close" onclick="closePopup()" aria-label="Close">X</button>
             </div>
-            <p class="P-Box">If you have posted here before, make sure you put your exact name in the input!</p>
+            <p class="P-Box">Your poster name is picked on your first post and stays tied to your account. Names already on the list below are taken.</p>
             <p class="P-Box P-SubTitle">All submitted names</p>
             <ol id="P2-NameList" class="P-Box P-List"></ol>
         </div>
@@ -310,8 +310,33 @@
             <button class="BackButton S2REDIRECT" onclick="switchScreen(`S2`)">
                 <img src="assets/Atlas.png" alt="Return to menu">
             </button>
-            <form id="S8-Main" novalidate>
+            <form id="S8-Gate" novalidate>
+                <h2 class="ScreenTitle">Sign In to Post</h2>
+                <p class="S8-GateText">You need an account to post planets. Browsing and searching stay open to everyone.</p>
+                <label class="S8-Field">
+                    <span>Email</span>
+                    <input name="email" type="email" autocomplete="email" required>
+                </label>
+                <label class="S8-Field">
+                    <span>Password</span>
+                    <input name="password" type="password" autocomplete="current-password" minlength="6" required>
+                </label>
+                <p id="S8-GateStatus" aria-live="polite"></p>
+                <div id="S8-GateButtons">
+                    <button type="submit" class="S8-GateButton" data-action="signin">Sign In</button>
+                    <button type="submit" class="S8-GateButton" data-action="signup">Create Account</button>
+                </div>
+                <div class="S8-Notice">
+                    <h3>Where your account is stored</h3>
+                    <p>Accounts are shared with <a href="https://merrickbro.org" target="_blank" rel="noopener">merrickbro.org</a>, so one login works on both sites. Sign-in is handled by <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, which stores your email and a hashed password. Planets you post are stored on Cloudflare with your poster name. Your email is never shown on the site.</p>
+                </div>
+            </form>
+            <form id="S8-Main" novalidate hidden>
                 <h2 class="ScreenTitle">Post Your Planet</h2>
+                <div id="S8-AccountBar">
+                    <span id="S8-AccountText"></span>
+                    <button type="button" id="S8-SignOut" class="S8-SmallButton">Sign Out</button>
+                </div>
                 <div id="S8-Columns">
                     <section class="S8-Panel">
                         <label class="S8-Field">
@@ -324,8 +349,7 @@
                         </label>
                         <label class="S8-Field">
                             <span>Posted By <button type="button" class="S8-Help" onclick="openPopup(`P2`)" aria-label="Name guide">?</button></span>
-                            <input name="poster" maxlength="40" required list="S8-PosterList" autocomplete="off">
-                            <datalist id="S8-PosterList"></datalist>
+                            <input name="poster" maxlength="40" required autocomplete="off">
                         </label>
                         <label class="S8-Field">
                             <span>Galaxy</span>
@@ -410,6 +434,7 @@
         </div>
 
         <script src="js/app.js"></script>
+        <script src="js/auth.js"></script>
         <script src="js/data.js"></script>
         <script src="js/S1-Loading.js"></script>
         <script src="js/S2-MainMenu.js"></script>
