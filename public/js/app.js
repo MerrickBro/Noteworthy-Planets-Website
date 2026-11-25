@@ -20,7 +20,10 @@ let Glyphs = [
 
 
 // --== Screen Switch ==--
-function switchScreen(id) {
+let screenBusy = false;
+
+// -= Swap Classes =-
+function swapScreen(id) {
     document.querySelectorAll(".screen, .active").forEach(s => {
         s.classList.remove("active");
         s.classList.add("inactive");
@@ -31,6 +34,40 @@ function switchScreen(id) {
 
     screen.classList.remove("inactive");
     screen.classList.add("active");
+}
+
+// -= Warp Overlay =-
+function warpTo(id) {
+    let warp = document.getElementById("Warp");
+    let glyph = Glyphs[Math.floor(Math.random() * Glyphs.length)];
+    warp.querySelector("img").src = glyph.image;
+
+    screenBusy = true;
+    warp.classList.remove("Warping");
+    void warp.offsetWidth;
+    warp.classList.add("Warping");
+
+    setTimeout(() => swapScreen(id), 380);
+    setTimeout(() => {
+        warp.classList.remove("Warping");
+        screenBusy = false;
+    }, 900);
+}
+
+// -= Switch With Transition =-
+function switchScreen(id) {
+    let current = document.querySelector(".active");
+    if (!document.getElementById(id) || current?.id === id) return;
+
+    let calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (calm || screenBusy) return swapScreen(id);
+
+    if (id === "S5" && current?.id !== "S6") return warpTo(id);
+    if (!document.startViewTransition) return swapScreen(id);
+
+    screenBusy = true;
+    let shift = document.startViewTransition(() => swapScreen(id));
+    shift.finished.finally(() => screenBusy = false);
 }
 
 const tracks = [
