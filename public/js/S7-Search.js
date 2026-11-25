@@ -6,14 +6,16 @@ let searchSort = document.getElementById("S7-Sort");
 let resultList = document.getElementById("S7-Results");
 
 const FEATURE_GROUPS = [
+    ["Biome", "biomeTypes", ["biome_type"]],
     ["Type", "types", ["type"]],
     ["Resources", "primaryResources", ["resource1"]],
     ["Resources", "resources", ["resource2", "resource3"]],
     ["Race", "lifeforms", ["lifeform"]],
     ["Economy", "economies", ["economy"]],
+    ["Trade", "economyTypes", ["economy_type"]],
     ["Sentinels", "sentinels", ["sentinel"]],
     ["Hazard", "hazards", ["hazard"]],
-    ["Biome", "biomes", ["biome"]]
+    ["Description", "biomes", ["biome"]]
 ];
 
 

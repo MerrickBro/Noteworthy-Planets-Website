@@ -262,6 +262,20 @@
   "Planet",
   "Moon"
  ],
+ "biomeTypes": [
+  "Lush",
+  "Barren",
+  "Dead",
+  "Exotic",
+  "Mega Exotic",
+  "Scorched",
+  "Frozen",
+  "Toxic",
+  "Irradiated",
+  "Marsh",
+  "Volcanic",
+  "Unknown"
+ ],
  "biomes": [
   "[REDACTED]",
   "Abandoned",
@@ -424,17 +438,31 @@
   "Wine Dark"
  ],
  "economies": [
-  "Economy Tier 1",
-  "Economy Tier 2",
-  "Economy Tier 3",
+  "Tier 1 (Weak)",
+  "Tier 2 (Average)",
+  "Tier 3 (Strong)",
   "Black Market",
-  "Abandoned"
+  "None",
+  "Unknown"
+ ],
+ "economyTypes": [
+  "Trading",
+  "Advanced Materials",
+  "Scientific",
+  "Mining",
+  "Manufacturing",
+  "Technology",
+  "Power Generation",
+  "None",
+  "Unknown"
  ],
  "lifeforms": [
   "Gek",
   "Korvax",
   "Vy'keen",
-  "None"
+  "Uncharted",
+  "Abandoned",
+  "Unknown"
  ],
  "primaryResources": [
   "Copper",
@@ -444,7 +472,9 @@
   "Emeril",
   "Activated Emeril",
   "Indium",
-  "Activated Indium"
+  "Activated Indium",
+  "Quartzite",
+  "Activated Quartzite"
  ],
  "resources": [
   "Ammonia",
@@ -453,7 +483,7 @@
   "Dioxite",
   "Faecium",
   "Gold",
-  "Magnetized Ferrite",
+  "Magnetised Ferrite",
   "Mordite",
   "Paraffinium",
   "Phosphorus",

@@ -305,6 +305,10 @@
         grid-template-columns: repeat(6, 1fr);
     }
 
+    .S8-Panel > .S8-Trio {
+        grid-template-columns: 1fr 1fr;
+    }
+
     #S8-Footer {
         flex-direction: column-reverse;
         align-items: stretch;

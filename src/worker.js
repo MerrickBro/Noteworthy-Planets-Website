@@ -4,7 +4,7 @@ import options from "../public/data/options.json";
 const POST_LIMIT = 5;
 const POST_WINDOW_SECONDS = 3600;
 
-const PLANET_COLUMNS = "id, name, star_system, galaxy, type, biome, economy, lifeform, resource1, resource2, resource3, sentinel, hazard, facts, image, poster, glyphs, created_at";
+const PLANET_COLUMNS = "id, name, star_system, galaxy, type, biome_type, biome, economy, economy_type, lifeform, resource1, resource2, resource3, sentinel, hazard, facts, image, poster, glyphs, created_at";
 
 const TEXT_FIELDS = {
     name: 60,
@@ -16,8 +16,10 @@ const TEXT_FIELDS = {
 const CHOICE_FIELDS = {
     galaxy: options.galaxies,
     type: options.types,
+    biome_type: options.biomeTypes,
     biome: options.biomes,
     economy: options.economies,
+    economy_type: options.economyTypes,
     lifeform: options.lifeforms,
     resource1: options.primaryResources,
     resource2: options.resources,

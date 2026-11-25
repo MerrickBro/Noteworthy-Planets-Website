@@ -64,7 +64,9 @@ let showPlanet = (index) => {
     setText("S6-Sentinel", planet.sentinel === "Unknown" ? "Sentinels Unknown" : planet.sentinel);
     setText("S6-Description", description);
     setText("S6-Resources", [planet.resource1, planet.resource2, planet.resource3].join(", "));
-    setText("S6-Economy", planet.economy + " : " + planet.lifeform);
+    setText("S6-BiomeType", planet.biome_type);
+    setText("S6-Economy", [planet.economy_type, planet.economy].filter(v => v !== "Unknown" && v !== "None").join(", ") || planet.economy);
+    setText("S6-Race", planet.lifeform);
     setText("S6-HazardName", planet.hazard);
     setText("S6-Poster", planet.poster);
     setText("S6-Code", formatGlyphs(planet.glyphs));
@@ -122,8 +124,9 @@ document.getElementById("S6-Copy").addEventListener("click", async (e) => {
 // -= Broken Images =-
 ["S5-Image", "S6-Image", "S6-Backdrop"].forEach(id => {
     let img = document.getElementById(id);
-    img.addEventListener("error", () => img.style.opacity = 0);
-    img.addEventListener("load", () => img.style.opacity = 1);
+    img.addEventListener("error", () => {
+        if (!img.src.endsWith("assets/Background.jpg")) img.src = "assets/Background.jpg";
+    });
 });
 
 
