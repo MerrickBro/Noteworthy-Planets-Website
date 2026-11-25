@@ -34,22 +34,22 @@ function switchScreen(id) {
 }
 
 const tracks = [
-    { file: "music/Adrift - 65daysofstatic.flac", title: "Adrift", artist: "65daysofstatic" },
-    { file: "music/Airy-O - Paul Weir.flac", title: "Airy-O", artist: "Paul Weir" },
-    { file: "music/Epoch of Reionisation - Paul Weir.flac", title: "Epoch of Reionisation", artist: "Paul Weir" },
-    { file: "music/Expeditions - Paul Weir.flac", title: "Expeditions", artist: "Paul Weir" },
-    { file: "music/Glimmer Nebula - 65daysofstatic.flac", title: "Glimmer Nebula", artist: "65daysofstatic" },
-    { file: "music/Nexus - Paul Weir.flac", title: "Nexus", artist: "Paul Weir" },
-    { file: "music/One Single Star - Paul Weir.flac", title: "One Single Star", artist: "Paul Weir" },
-    { file: "music/Overseer Planet - 65daysofstatic.flac", title: "Overseer Planet", artist: "65daysofstatic" },
-    { file: "music/Protostar - 65daysofstatic.flac", title: "Protostar", artist: "65daysofstatic" },
-    { file: "music/Recursive Simulation - Paul Weir.flac", title: "Recursive Simulation", artist: "Paul Weir" },
-    { file: "music/Self Test - Paul Weir.flac", title: "Self Test", artist: "Paul Weir" },
-    { file: "music/The Appearance of a Star System - Paul Weir.flac", title: "The Appearance of a Star System", artist: "Paul Weir" },
-    { file: "music/The Path Finder - 65daysofstatic.flac", title: "The Path Finder", artist: "65daysofstatic" },
-    { file: "music/Tunguska_Iteration_02 - 65daysofstatic.flac", title: "Tunguska Iteration 02", artist: "65daysofstatic" },
-    { file: "music/Tunguska_Iteration_03 - 65daysofstatic.flac", title: "Tunguska Iteration 03", artist: "65daysofstatic" },
-    { file: "music/Vostok - 65daysofstatic.flac", title: "Vostok", artist: "65daysofstatic" }
+    { file: "music/Adrift - 65daysofstatic.m4a", title: "Adrift", artist: "65daysofstatic" },
+    { file: "music/Airy-O - Paul Weir.m4a", title: "Airy-O", artist: "Paul Weir" },
+    { file: "music/Epoch of Reionisation - Paul Weir.m4a", title: "Epoch of Reionisation", artist: "Paul Weir" },
+    { file: "music/Expeditions - Paul Weir.m4a", title: "Expeditions", artist: "Paul Weir" },
+    { file: "music/Glimmer Nebula - 65daysofstatic.m4a", title: "Glimmer Nebula", artist: "65daysofstatic" },
+    { file: "music/Nexus - Paul Weir.m4a", title: "Nexus", artist: "Paul Weir" },
+    { file: "music/One Single Star - Paul Weir.m4a", title: "One Single Star", artist: "Paul Weir" },
+    { file: "music/Overseer Planet - 65daysofstatic.m4a", title: "Overseer Planet", artist: "65daysofstatic" },
+    { file: "music/Protostar - 65daysofstatic.m4a", title: "Protostar", artist: "65daysofstatic" },
+    { file: "music/Recursive Simulation - Paul Weir.m4a", title: "Recursive Simulation", artist: "Paul Weir" },
+    { file: "music/Self Test - Paul Weir.m4a", title: "Self Test", artist: "Paul Weir" },
+    { file: "music/The Appearance of a Star System - Paul Weir.m4a", title: "The Appearance of a Star System", artist: "Paul Weir" },
+    { file: "music/The Path Finder - 65daysofstatic.m4a", title: "The Path Finder", artist: "65daysofstatic" },
+    { file: "music/Tunguska_Iteration_02 - 65daysofstatic.m4a", title: "Tunguska Iteration 02", artist: "65daysofstatic" },
+    { file: "music/Tunguska_Iteration_03 - 65daysofstatic.m4a", title: "Tunguska Iteration 03", artist: "65daysofstatic" },
+    { file: "music/Vostok - 65daysofstatic.m4a", title: "Vostok", artist: "65daysofstatic" }
 ];
 
 let currentAudioIndex = 0;
