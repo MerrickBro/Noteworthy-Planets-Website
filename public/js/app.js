@@ -75,8 +75,8 @@ let displayCurrentTrackInfo = (index) => {
     let track = tracks[index];
     if (!track) return;
 
-    //document.getElementById("currentTitle").textContent = track.title;
-    //document.getElementById("currentArtist").textContent = track.artist;
+    document.getElementById("currentTitle").textContent = track.title;
+    document.getElementById("currentArtist").textContent = track.artist;
 };
 
 let playTrack = (index) => {
