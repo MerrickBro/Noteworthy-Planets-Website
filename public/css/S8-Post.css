@@ -1,0 +1,316 @@
+/* --== Screen ==-- */
+#S8 {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../assets/Background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#S8-Main {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: min(1100px, 92%);
+    max-height: 95%;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #00000077;
+    backdrop-filter: blur(5px);
+    border: 4px solid #000000;
+    border-radius: 1svb;
+}
+
+#S8-Columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.S8-Panel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+    background-color: #00000066;
+    border: 2px solid #b0e0ff;
+    border-radius: 10px;
+}
+
+/* --== Fields ==-- */
+.S8-Field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.S8-Field > span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #b0e0ff;
+}
+
+.S8-Field input,
+.S8-Field select,
+.S8-Field textarea {
+    width: 100%;
+    min-height: 42px;
+    padding: 6px 10px;
+}
+
+.S8-Field textarea {
+    resize: vertical;
+    font-family: 'NMSFuturaProBook', sans-serif;
+}
+
+.S8-Pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.S8-Trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.S8-Trio select {
+    min-width: 0;
+    min-height: 42px;
+    padding: 6px;
+}
+
+.S8-Help {
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    color: white;
+    background: transparent;
+    border: 2px solid #b0e0ff;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.S8-SmallButton {
+    padding: 0 16px;
+    color: white;
+    background: transparent;
+    border: 2px solid #b0e0ff;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* --== Hazards ==-- */
+#S8-Hazards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.S8-Hazard {
+    aspect-ratio: 1 / 1;
+    max-height: 64px;
+    padding: 4px;
+    color: white;
+    background-color: #00000088;
+    border: 2px solid #b0e0ff33;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.S8-Hazard img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.S8-Selected {
+    border-color: #b0e0ff;
+    box-shadow: 0 0 10px #b0e0ff88;
+}
+
+/* --== Glyphs ==-- */
+#S8-GlyphSlots {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 4px;
+}
+
+.S8-Slot {
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    padding: 2px;
+    background-color: #00000088;
+    border: 1px solid #b0e0ff44;
+    border-radius: 6px;
+}
+
+.S8-Slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.S8-Slot:not(.S8-Filled) img {
+    visibility: hidden;
+}
+
+.S8-Next {
+    border-color: #b0e0ff;
+    animation: S8-Blink 1s ease-in-out infinite;
+}
+
+@keyframes S8-Blink {
+    50% { border-color: #b0e0ff33; }
+}
+
+#S8-GlyphPad {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 6px;
+}
+
+.S8-Key {
+    min-width: 0;
+    aspect-ratio: 1 / 1;
+    padding: 4px;
+    background: transparent;
+    border: 2px solid #b0e0ff33;
+    border-radius: 8px;
+}
+
+.S8-Key:hover {
+    border-color: #b0e0ff;
+}
+
+.S8-Key img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#S8-GlyphRow {
+    display: flex;
+    gap: 8px;
+}
+
+#S8-GlyphCode {
+    flex: 1;
+    min-width: 0;
+    min-height: 42px;
+    padding: 6px 10px;
+    font-family: monospace;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+}
+
+/* --== Image ==-- */
+#S8-Preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 140px;
+    max-height: 220px;
+    overflow: hidden;
+    border: 2px dashed #b0e0ff44;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+#S8-Preview span {
+    opacity: 0.5;
+}
+
+#S8-Preview img:not([hidden]) {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+}
+
+#S8-Preview img:not([hidden]) ~ span,
+#S8-Preview:has(img:not([hidden])) span {
+    display: none;
+}
+
+.S8-PreviewError {
+    border-color: #ff6b6b88;
+}
+
+.S8-PreviewError span::after {
+    content: " (could not load)";
+}
+
+/* --== Footer ==-- */
+#S8-Footer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+#S8-Status {
+    flex: 1;
+    margin: 0;
+    font-size: 18px;
+}
+
+.S8-Error {
+    color: #ff8a8a;
+}
+
+.S8-Success {
+    color: #8aff9e;
+}
+
+#S8-Upload {
+    min-height: 60px;
+    padding: 0 30px;
+    color: white;
+    background-color: #b0e0ff22;
+    border: 2px solid #b0e0ff;
+    border-radius: 12px;
+    font-size: 26px;
+}
+
+#S8-Upload:hover {
+    background-color: #b0e0ff44;
+}
+
+#S8-Upload:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+/* --== Mobile ==-- */
+@media (max-width: 800px) {
+    #S8-Main {
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        padding: 72px 10px 10px;
+        border-radius: 0;
+    }
+
+    #S8-Columns {
+        grid-template-columns: 1fr;
+    }
+
+    #S8-GlyphSlots {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    #S8-Footer {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    #S8-Status {
+        text-align: center;
+    }
+}

@@ -1,0 +1,159 @@
+/* --== Screen ==-- */
+#S6 {
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.S6-Blur {
+    filter: blur(14px) brightness(0.6);
+    transform: scale(1.1);
+}
+
+#S6-Main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: min(1100px, 92%);
+    max-height: 95%;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#S6-Header {
+    text-align: center;
+}
+
+#S6-Header p {
+    margin: 2px 0;
+}
+
+/* --== Body ==-- */
+#S6-Body {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 16px;
+}
+
+#S6-ImageFrame {
+    position: relative;
+    min-height: 260px;
+    overflow: hidden;
+    border: 2px solid #b0e0ff88;
+    border-radius: 10px;
+}
+
+#S6-Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#S6-Hazard {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+#S6-Sentinel {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    margin: 0;
+    padding: 4px 10px;
+    background-color: #000000aa;
+    border-radius: 6px;
+}
+
+#S6-Details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.S6-Row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 12px;
+    background-color: #00000066;
+    border: 1px solid #b0e0ff44;
+    border-radius: 8px;
+}
+
+.S6-Row span {
+    font-size: 14px;
+    color: #b0e0ff;
+}
+
+.S6-Row b {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+#S6-Glyphs {
+    flex-wrap: wrap;
+}
+
+#S6-Glyphs img {
+    width: 32px;
+    height: 32px;
+}
+
+#S6-CodeRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#S6-Code {
+    font-size: 20px;
+    letter-spacing: 0.05em;
+}
+
+#S6-CodeRow .PlanetButton {
+    padding: 4px 12px;
+    font-size: 16px;
+}
+
+#S6-Facts {
+    margin: 0;
+    padding: 12px;
+    font-family: 'NMSFuturaProBook', sans-serif;
+    font-size: 18px;
+    white-space: pre-wrap;
+    background-color: #00000066;
+    border-left: 3px solid #b0e0ff;
+    border-radius: 6px;
+}
+
+/* --== Mobile ==-- */
+@media (max-width: 800px) {
+    #S6-Main {
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        padding: 72px 10px 10px;
+        border-radius: 0;
+    }
+
+    #S6-Body {
+        grid-template-columns: 1fr;
+    }
+
+    #S6-ImageFrame {
+        min-height: 200px;
+        max-height: 260px;
+    }
+
+    #S6-Glyphs img {
+        width: 24px;
+        height: 24px;
+    }
+}

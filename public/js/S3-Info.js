@@ -9,8 +9,6 @@ let sentinelLevels = [
     { title: "Corrupted", names: ["Answer To None", "Corrupted", "De-Harmonised", "Dissonant", "Forsaken", "Rebellious", "Sharded from the Atlas"] }
 ];
 
-// GUESS: no planet database yet, so posters stay empty until one exists
-let posters = [];
 
 
 // --== Music Controls ==--
@@ -57,14 +55,8 @@ audio.addEventListener("pause", showToggleState);
 
 
 // --== Planet Refresh ==--
-// GUESS: placeholder until a planet database is chosen
-let refreshPlanets = () => {
-    let button = document.getElementById("S3-RefreshButton");
-    button.textContent = "No planet database yet";
-    setTimeout(() => button.textContent = "Planet Refresh", 2000);
-};
-
-document.getElementById("S3-RefreshButton").addEventListener("click", refreshPlanets);
+let refreshButton = document.getElementById("S3-RefreshButton");
+refreshButton.addEventListener("click", () => refreshWithFeedback(refreshButton, "Planet Refresh"));
 
 
 // --== Popups ==--
@@ -89,12 +81,12 @@ let renderPosterList = () => {
     let list = document.getElementById("P2-NameList");
     list.innerHTML = "";
 
-    if (posters.length === 0) {
+    if (Data.posters.length === 0) {
         list.innerHTML = "<li class='P-Empty'>No names submitted yet.</li>";
         return;
     }
 
-    [...posters].sort((a, b) => b.count - a.count).forEach(p => {
+    Data.posters.forEach(p => {
         let item = document.createElement("li");
         item.innerHTML = "<span></span><span></span>";
         item.children[0].textContent = p.name;

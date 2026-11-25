@@ -1,13 +1,24 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "noteworthyplanets",
+  "main": "src/worker.js",
   "compatibility_date": "2026-07-11",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "noteworthy-planets",
+      "database_id": "baa5df2a-7365-422f-a4df-e2d262ede92f",
+      "migrations_dir": "migrations"
+    }
+  ],
   "compatibility_flags": [
     "nodejs_compat"
   ]
