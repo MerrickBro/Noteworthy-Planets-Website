@@ -68,9 +68,10 @@
                 </div>
                 <div id="S2-Bottom">
                     <div id="S2-ButtonRow1">
-                        <button id="S2-RefreshButton" class="S2-Button">
-                            <img src="assets/PORTALSYMBOL.9.png" alt="Planet Fetcher">
+                        <button id="S2-RefreshButton" class="S2-Button" aria-label="Refresh planets">
+                            <img src="assets/PORTALSYMBOL.9.png" alt="">
                         </button>
+                        <span id="S2-RefreshStatus" aria-live="polite"></span>
                     </div>
                     <div id="S2-ButtonRow2">
                         <button id="S2-PlanetViewerButton" class="S5REDIRECT S2-Button" onclick="switchScreen(`S5`)">
@@ -213,6 +214,7 @@
         </div>
 
         <script src="js/app.js"></script>
+        <script src="js/data.js"></script>
         <script src="js/S1-Loading.js"></script>
         <script src="js/S2-MainMenu.js"></script>
         <script src="js/S3-Info.js"></script>

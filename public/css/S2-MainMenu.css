@@ -168,3 +168,12 @@
     font-size: 19px;
   }
 }
+
+#S2-ButtonRow1 {
+  align-items: center;
+}
+
+#S2-RefreshStatus {
+  font-size: 20px;
+  color: #b0e0ff;
+}

@@ -6,3 +6,8 @@ setInterval(() => {
     let glyph = Glyphs[Math.floor(Math.random() * Glyphs.length)];
     glyphButtonImage.src = glyph.image;
 }, 400);
+
+
+// --== Planet Fetcher ==--
+let menuRefreshStatus = document.getElementById("S2-RefreshStatus");
+document.getElementById("S2-RefreshButton").addEventListener("click", () => refreshWithFeedback(menuRefreshStatus, ""));
